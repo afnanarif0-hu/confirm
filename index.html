@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profit Pulse</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="card calculator-card">
+      <header>
+        <p class="eyebrow">Inventory Profit Calculator</p>
+        <h1>Profit Pulse</h1>
+        <p class="subtitle">Calculate net profit and profit percentage from your total selling price after inventory purchasing costs.</p>
+      </header>
+
+      <form id="profit-form" class="form-grid" novalidate>
+        <label>
+          <span>Total Selling Price</span>
+          <div class="input-wrap">
+            <span class="currency">$</span>
+            <input id="sellingPrice" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </div>
+        </label>
+
+        <label>
+          <span>Total Inventory Purchasing Cost</span>
+          <div class="input-wrap">
+            <span class="currency">$</span>
+            <input id="purchaseCost" type="number" min="0" step="0.01" placeholder="0.00" required />
+          </div>
+        </label>
+
+        <button type="submit">Calculate Profit</button>
+      </form>
+    </section>
+
+    <section class="card result-card" aria-live="polite">
+      <h2>Business Snapshot</h2>
+
+      <div class="result-row">
+        <p>Net Profit</p>
+        <strong id="netProfit">$0.00</strong>
+      </div>
+
+      <div class="result-row">
+        <p>Profit Percentage</p>
+        <strong id="profitPercent">0.00%</strong>
+      </div>
+
+      <div class="progress-meta">
+        <span>Profit margin health</span>
+        <span id="marginLabel">Neutral</span>
+      </div>
+      <div class="progress-track" role="img" aria-label="Profit margin indicator">
+        <div id="marginBar" class="progress-fill"></div>
+      </div>
+
+      <p id="statusText" class="status">Enter your values to see your result.</p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
